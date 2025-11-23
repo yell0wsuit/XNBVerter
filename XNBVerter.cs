@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 
 Console.WriteLine("XNBVerter 1.0.0\n");
 
@@ -50,7 +50,6 @@ if (tasks.Length > 0)
 }
 else if (filePaths.Length > 0)
 {
-    Console.WriteLine("Placeholder for UI code.");
     int optionNumber = 0;
     string inputNumber;
     while (optionNumber != 1)
@@ -73,7 +72,7 @@ else
     Console.WriteLine("You can drag and drop files or use the command line. If no options are set UI mode will be used.");
     Console.WriteLine("XNBVerter INPUT_FILE [OPTIONS]\nYou may have input files and options wherever you want, but this formatting is recommended.");
     Console.WriteLine("    -output_type        Sets the output type your input files should use.");
-    Console.WriteLine("        song                Creates a Song XNB for .wav, .mp3, .ogg or .wma files.\n                            If ffprobe is not found you will have to enter the length of the audio files manually.");
+    Console.WriteLine("        song            Creates a Song XNB for .wav, .mp3, .ogg or .wma files.\n                        If ffprobe is not found you will have to enter the length of the audio files manually.");
     _ = Console.ReadKey(true);
     return;
 }
