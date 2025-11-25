@@ -2,6 +2,9 @@ using XNBVerter.Core;
 
 namespace XNBVerter.Cli
 {
+    /// <summary>
+    /// Provides utilities for parsing command-line arguments supplied to XNBVerter.
+    /// </summary>
     internal sealed class ArgumentParser
     {
         public static ParseResult Parse(string[] args)
