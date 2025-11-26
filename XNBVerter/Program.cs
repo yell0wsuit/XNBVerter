@@ -3,10 +3,18 @@ using XNBVerter.Core;
 
 namespace XNBVerter
 {
+    /// <summary>
+    /// Entry point class for the XNBVerter application.
+    /// </summary>
     internal static class Program
     {
         private const string Version = "1.0.0";
 
+        /// <summary>
+        /// Main entry point for the application.
+        /// </summary>
+        /// <param name="args">CLI arguments.</param>
+        /// <returns>Exit code: 0 for success, 1 for failure.</returns>
         private static int Main(string[] args)
         {
             Console.WriteLine($"XNBVerter {Version}\n");
@@ -60,6 +68,13 @@ namespace XNBVerter
             return 0;
         }
 
+        /// <summary>
+        /// Routes execution to the appropriate task handler based on the specified task type.
+        /// </summary>
+        /// <param name="task">The type of task to execute.</param>
+        /// <param name="filePaths">List of file paths to process.</param>
+        /// <param name="ffprobe">FFprobe service for retrieving audio metadata.</param>
+        /// <param name="songCreator">Service for creating Song XNB files.</param>
         private static void RunTasks(
             TaskType task,
             IReadOnlyList<string> filePaths,
@@ -79,6 +94,12 @@ namespace XNBVerter
             }
         }
 
+        /// <summary>
+        /// Processes audio files and creates Song XNB files for each valid input.
+        /// </summary>
+        /// <param name="filePaths">List of file paths to process.</param>
+        /// <param name="ffprobe">FFprobe service for retrieving audio duration metadata.</param>
+        /// <param name="creator">Service for creating Song XNB files.</param>
         private static void RunSongTask(
             IReadOnlyList<string> filePaths,
             FfprobeService ffprobe,
@@ -115,6 +136,9 @@ namespace XNBVerter
             }
         }
 
+        /// <summary>
+        /// Prompts the user to press a key before exiting if running in an interactive console.
+        /// </summary>
         private static void WaitIfInteractive()
         {
             if (!Console.IsOutputRedirected)
