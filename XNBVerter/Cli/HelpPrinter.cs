@@ -18,8 +18,8 @@ namespace XNBVerter.Cli
             Console.WriteLine("but this formatting is recommended.");
             Console.WriteLine();
             Console.WriteLine("Options:");
-            Console.WriteLine("  -output_type        Sets the output type your input files should use.");
-            Console.WriteLine("  song                Creates a Song XNB for .wav, .mp3, .ogg or .wma files.");
+            Console.WriteLine("  -ot, -output_type   Sets the output type your input files should use.");
+            Console.WriteLine("     song             Creates a Song XNB for .wav, .mp3, .ogg or .wma files.");
             Console.WriteLine("                      If ffprobe is not found, you will have to");
             Console.WriteLine("                      enter the length of the audio files manually.");
             Console.WriteLine();
