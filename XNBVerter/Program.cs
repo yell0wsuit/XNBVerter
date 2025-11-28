@@ -1,3 +1,5 @@
+using System.Reflection;
+
 using XNBVerter.Cli;
 using XNBVerter.Core;
 
@@ -8,7 +10,7 @@ namespace XNBVerter
     /// </summary>
     internal static class Program
     {
-        private const string Version = "1.0.0";
+        private static Version appVersion = Assembly.GetExecutingAssembly().GetName().Version;
 
         /// <summary>
         /// Main entry point for the application.
@@ -17,7 +19,7 @@ namespace XNBVerter
         /// <returns>Exit code: 0 for success, 1 for failure.</returns>
         private static int Main(string[] args)
         {
-            Console.WriteLine($"XNBVerter {Version}\n");
+            Console.WriteLine($"XNBVerter {appVersion}\n");
 
             ParseResult result = ArgumentParser.Parse(args);
 
@@ -47,7 +49,7 @@ namespace XNBVerter
             if (!Console.IsOutputRedirected)
             {
                 Console.Clear();
-                Console.WriteLine($"XNBVerter {Version}\n");
+                Console.WriteLine($"XNBVerter {appVersion}\n");
             }
 
             FfprobeService ffprobe = new();
